@@ -1,0 +1,16 @@
+{
+  "name": "04-ts",
+  "version": "1.0.0",
+  "description": "My first TypeScript project",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.0.2"
+  }
+}
