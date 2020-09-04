@@ -150,7 +150,7 @@ Write a function that accepts the username and returns a promise that resolves w
 ```
 function getCommentersEmailIds( username ) {
 }
-```
+``` 
 For example, if username = Bret, then first user matching username Bret has id = 1 (user whose name is "Leanne Graham" and username is "Bret"). The first post by this user has id = 1. The list of people who commented on this post are [ "Eliseo@gardner.biz", "Jayne_Kuhic@sydney.com", "Nikita@garfield.biz", "Lew@alysha.tv", "Hayden@althea.biz" ]  
 
 Test your function out, for example by passing username as 'Bret'

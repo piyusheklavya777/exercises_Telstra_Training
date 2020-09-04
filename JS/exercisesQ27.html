@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush</title>
+
+    <style>
+        .new-class {
+            border: 1px solid black; padding:10px; color:olive;
+        }
+    </style>
+</head>
+<body>
+    <div id="para-c">
+        <p id="para-1">1  entore repellendus quo mollitia esse quod tenetur, iure, in sint nihil repellat reprehenderit iusto ad sunt. Suscipit, voluptates porro! Maiores, blanditiis ipsam cupiditate excepturi necessitatibus deserunt quisquam sunt vero sed distinctio odio sequi?
+        </p>
+        <p id="para-2">2  entore repellendus quo mollitia esse quod tenetur, iure, in sint nihil repellat reprehenderit iusto ad sunt. Suscipit, voluptates porro! Maiores, blanditiis ipsam cupiditate excepturi necessitatibus deserunt quisquam sunt vero sed distinctio odio sequi?
+        </p>
+        <p id="para-3">3 ventore repellendus quo mollitia esse quod tenetur, iure, in sint nihil repellat reprehenderit iusto ad sunt. Suscipit, voluptates porro! Maiores, blanditiis ipsam cupiditate excepturi necessitatibus deserunt quisquam sunt vero sed distinctio odio sequi?
+        </p>
+    </div>
+
+
+    <script>
+        //Q27
+        let para4 = document.createElement("div");
+        let para0 = document.createElement("div");
+
+        para4.innerHTML = " 4 appended Para  entore repellendus quo mollitia esse quod tenetur, iure, in sint nihil repellat reprehenderit iusto ad sunt. Suscipit, voluptates porro! Maiores, blanditiis ipsam cupiditate excepturi necessitatibus deserunt quisquam sunt vero sed distinctio odio sequi?"
+        para0.innerHTML = "0 prepended Para ventore repellendus quo mollitia esse quod tenetur, iure, in sint nihil repellat reprehenderit iusto ad sunt. Suscipit, voluptates porro! Maiores, blanditiis ipsam cupiditate excepturi necessitatibus deserunt quisquam sunt vero sed distinctio odio sequi?"
+
+        document.body.prepend(para0)
+        document.body.appendChild(para4)
+
+        console.log(document.getElementById("para-2").innerHTML)
+
+        document.getElementById("para-2").innerHTML = '<span style="color:blue">2 SECOND PARA TEXT </span> <span style="color:red"> REPLACED BY TWO SPANS </span>';
+        
+        para2 = document.body.childNodes[2].childNodes[3]; console.log(para2.id) //prints 'para-2'
+
+        para2.id = "para-2new";   console.log(para2.id) //prints 'para-2new'
+
+        para2.setAttribute("name", "namedPara2"); console.log(para2);
+      
+        document.getElementById("para-3").style = "background: crimson; color:white";
+
+        let nc = " border: 1px solid black; padding:10px; color:olive;"
+
+
+        document.getElementById("para-3").style = nc;
+
+        console.log( document.getElementById("para-3"))
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+<!-- 27 28 29(EXCEPT LST PART) 30  -->

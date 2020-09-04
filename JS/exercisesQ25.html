@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q 25</title>
+</head>
+<body>
+    <div id="chow1"></div>
+    <div id="show2"></div>
+    <div id="show3"></div>
+    <script>
+        var phones = [
+    { name : 'Samsung Galaxy S10+ Plus', price: 620, type: 'refurbished', manufacturer: 'Samsung' },
+    { name : 'Apple iPhone 7 Plus', price: 450, type: 'refurbished', manufacturer: 'Apple' },
+    { name : 'One Plus 6', price: 430, type: 'new', manufacturer: 'OnePlus' },
+    { name : 'Apple iPhone Xs', price: 910, type: 'new', manufacturer: 'Apple' },
+    { name : 'One Plus 7', price: 430, type: 'refurbished', manufacturer: 'OnePlus' },
+    { name : 'Apple iPhone 8 Plus', price: 610, type: 'new', manufacturer: 'Apple' },
+];
+        let phoneNames = [];
+        let cheapPhones = [];
+
+        phones.map(ph => { phoneNames.push(ph.name) } );
+        console.log(phoneNames)
+
+        let newPhones = phones.filter(iter => {
+            if(iter.type == 'new' ) {
+                return true;
+            }
+        }); 
+        console.log(newPhones)
+
+        phones.forEach(iter => {
+            if(iter.price < 440) {
+                cheapPhones.push(iter)
+            }
+        })
+       console.log(cheapPhones)
+
+
+        //
+    </script>
+</body>
+</html>

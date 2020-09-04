@@ -1,0 +1,98 @@
+<!-- not yet completed -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator | Piyush</title>
+    <style>
+
+        #container {
+            border: 1px solid rgb(20, 59, 25); margin: 0 20% auto; padding : 15px;
+            border-radius : 10px;
+
+            /* display: grid; grid-template-rows: 1fr 1fr 1fr 1fr; */
+            
+        }
+        #screenInput {
+            width:100%; height: 30px; background: rgb(237, 255, 227); border:none;
+        }
+         #screenOutput {
+            width:100%; height: 30px; background: rgb(237, 255, 227); border:none;
+        }
+        #numpad { padding: 5px; display : grid; 
+                  grid-template-rows: 1fr 1fr 1fr 1fr; grid-template-columns: 1fr 1fr 1fr 1fr;
+                  
+
+        }
+        #numbers {
+
+        }
+        #operators {
+
+        }
+        .keys {
+            border : 1px solid black; 
+            padding:3px; margin:2px; text-align: center;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="displays">
+            <p type="text" id="screenInput"></p>
+            <p type="text" id="screenOutput"></p>
+        </div>
+        <div id="numpad">
+            <button class="keys num" onclick="input('1',true)" >1</button>
+            <button class="keys num" onclick="input('2',true)" >2</button>
+            <button class="keys num" onclick="input('3',true)" >3</button>
+            <button class="keys oper" onclick="input('+',false)" >+</button>
+
+            <button class="keys num" onclick="input('4',true)" >4</button>
+            <button class="keys num" onclick="input('5',true)">5</button>
+            <button class="keys num" onclick="input('6',true)">6</button>
+            <button class="keys oper" onclick="input('-',false)">-</button>
+
+            <button class="keys num" onclick="input('7',true)">7</button>
+            <button class="keys num" onclick="input('8',true)"> 8</button>
+            <button class="keys num" onclick="input('9',true)">9</button>
+            <button class="keys oper" onclick="input('*',false)">*</button>
+
+            <button class="keys oper" onclick="input('History',false)">H</button>
+            <button class="keys num" onclick="input('0',true)">0</button>
+            <button class="keys oper" onclick="input('del',false)">C</button>
+            <button class="keys oper" onclick="input('=',false)">=</button>
+
+            <button class="keys oper" onclick="input('.',false)">.</button>
+            <button class="keys num" onclick="input('00',true)">00</button>
+            <button class="keys oper" onclick="input('/',false)">/</button>
+            <button class="keys oper" onclick="input('ClearAll',false)">AC</button>
+            
+        </div>        
+    </div>
+    <script>
+        let ipScreen = "0";  let hist = ["",""]; 
+        function input(key, isNum) {
+            ipScreen +=key; 
+            document.getElementById("screenInput").innerText = ipScreen;
+            if(isNum ) {
+                document.getElementById("screenOutput").innerText = eval(ipScreen).toString();     
+            }
+            else if (key === 'ClearAll') {
+              hist.push( eval(ipScreen).toString()); 
+              ipScreen = ""; }
+               
+            }
+            
+
+            document.getElementById("screenOutput").innerText = eval(ipScreen).toString();     
+            
+        
+    </script>
+</body>
+</html>

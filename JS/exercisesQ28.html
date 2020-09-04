@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIYUSH </title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- Q 28 -->
+    <div id="container">
+        <p id="initial-para">m, minima minus vitae excepturi facere est temporibus.</p>
+        <br><br>
+        
+        <input type="text" id="txt-input" minlength="8">
+        <button id="submitBTN">Submit !</button>
+        <h3 id="errormsg" style="color:red;"></h3>
+    </div>
+
+    <script>
+        document.getElementById('submitBTN').addEventListener("click", (event)=>{
+            let txt = document.getElementById("initial-para").innerText;
+
+            alert(txt); event.preventDefault();
+
+            if ( document.getElementById('txt-input').value.length < 8) {
+                document.getElementById("errormsg").innerText = "minimun 8 characters please !"
+            }
+        })
+
+        document.getElementById('txt-input').addEventListener("keydown", ()=> {
+            if ( document.getElementById('txt-input').value.length < 8)
+            document.getElementById('txt-input').style = "background:red";
+
+            else document.getElementById('txt-input').style = "background:lightgreen";
+        });
+    </script>
+</body>
+</html>
