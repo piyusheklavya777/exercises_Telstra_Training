@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="libs/normalize.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        #allhere {
+            display: grid;
+            /* grid-template-rows: 400px 400px; */
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap : 20px;
+            /* align-content:space-between; */
+            
+        }
+        .card {
+            padding: 10px 5px;
+
+            border : 1.5px solid rgb(128, 128, 128); border-radius:10px;;
+            
+            font-family: 'Roboto', sans-serif;           overflow:hidden;   
+        } 
+
+        #description {    height: 100px;  }
+
+        #imageid {      height:80px; width:auto;     }
+
+        #imagediv {text-align: center;  }
+
+        #heading {color:rgb(1, 1, 84); font-size: 25px; border:1px}
+
+        #location {color:rgb(70, 143, 206); font-weight: 300; font-size: 15px;}
+
+        #modes {color:rgb(240, 96, 77); font-size: 12px; }
+
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/workshops.html">Workshops</a></li>
+            </ul>
+        </nav>
+        <main class="container">
+            <h1>Workshops | WORKSHOP</h1>
+            <hr/>
+            <div id="allhere">
+                
+            </div>
+           
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+    <script src="/workshops.js"></script>
+    
+</body>
+</html>
