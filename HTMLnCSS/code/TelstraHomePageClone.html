@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            border-top: 3px solid gold;
+            border-bottom:10px solid black
+        }
+        .container {
+            margin: 0 10%; border:0px solid black;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr ; grid-template-rows: repeat(6, 80px);
+
+            grid-gap: 35px;
+
+        }
+        .bigboxes  { border : 0px solid blue; width:100%; height: 100%;  }
+        .bigboxes1 {  grid-column: 1/3; grid-row:1/4;    }
+        .bigboxes2 { grid-column: 3/5; grid-row:1/4;     }
+        .bigboxes3 { grid-row: 4/7; }
+        .bigboxes4 { grid-row: 4/7; }
+        .bigboxes5 { grid-row: 4/5; grid-column: 3/5;;  display:inline; }
+        .bigboxes6 { grid-row: 5/6; grid-column: 3/5;;   }
+        .bigboxes7 { grid-row: 6/7; grid-column: 3/5;;   }
+
+        .img {
+            width:100%; 
+        }
+        .img2 {
+            height: 100%; margin-right:10px; float:left;
+        }
+        .heading {
+            font-weight: bolder; 
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        .heading1 {
+            font-size:18px;
+        }
+
+        .content { font-weight: 100;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif; margin-left:10%
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Latest updates </h1>
+    <div class="container">
+        
+        <div class="bigboxes bigboxes1">
+
+                <img class="img" src="./images/one.jpg" alt="One">
+            
+        </div>
+
+
+        <div class="bigboxes bigboxes2">
+            <span class="heading">5G from Telstra</span><br/><br/>
+            <span class="heading heading1">Discover the power of Australia’s best 5G</span>
+            <br/><br><br><span class="content"> 5G will change how we experience the world. Fast downloads are just the beginning.</span>
+            <br/><br/><br/><br/>
+           <span class="content" style="color:blue">Find out how.</span>
+        
+        </div>
+        
+
+        <div class="bigboxes bigboxes4">
+            <img src="./images/two.jpg" alt="" class="img"><br><br>
+            <span class="heading">News</span><br><br>
+            <span class="heading heading1">Supporting customers in Victoria</span><br><br>
+            <span class="content">With increased COVID-19 restrictions in Victoria, we want to help our eligible customers stay connected.</span>
+            <br><br><span class="content" style="color:blue;">COVID-19 support for Victoria </span>
+        </div>
+
+
+        <div class="bigboxes bigboxes3">
+            <img src="./images/three.jpg" alt="" class="img"><br><br>
+            <span class="heading">My Telstra App</span><br><br>
+            <span class="heading heading1">Help made easy</span><br><br>
+            <span class="content">We've made changes for those who can't talk right now. Message us anytime in the My Telstra app.</span>
+            <br><br><span class="content" style="color:blue;">How to message us </span>
+            <br><br><span class="content" style="color:blue;">Download the app</span>
+        </div>
+        
+
+        <div class="bigboxes bigboxes5">
+            <img src="./images/four.jpg" alt="" class="img2" >
+            <span class="heading">News</span><br/>
+            <span class="heading heading1">Get extra data and lock in the price of your plan for 12 months for eligible customers</span>
+            
+        </div>
+
+
+        <div class="bigboxes bigboxes6">
+            <img src="./images/five.jpg" alt="" class="img2" >
+            <span class="heading">News</span><br/>
+            <span class="heading heading1">We’re proud to announce we’ve been certified carbon neutral</span>
+            
+        </div>
+
+
+        <div class="bigboxes bigboxes7">
+            <img src="./images/six.jpg" alt="" class="img2">
+            <span class="heading">News</span><br/>
+            <span class="heading heading1">The way we live is changing, so we’re making changes too</span>
+            
+        </div>
+        
+
+        
+    </div>
+
+    <div class="attributes" style="margin-top: 200px; padding:100px; background: #000; color:white"> <span class="heading 1">Piyush Eklavya | Minor part of the Telstra website has been cloned. </span> </div>
+    
+</body>
+</html>

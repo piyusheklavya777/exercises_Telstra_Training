@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Boxes</title>
+    <style>
+        body {
+            background: rgb(168, 168, 168);
+        }
+        .top {
+            margin : 0% 10%; background: white; padding:20% 0%; text-align: justify; text-justify: inter-word;
+
+            display: flex; flex-direction:row;
+        }
+        .kid { 
+            margin:2%; border-top: 5px solid red; padding-top:5px; flex:1
+
+        }
+        /* equlize flex, above n below for 4 flexes. */
+        #kid1 {
+            flex:2;
+        }
+        .img {
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="top">
+        <h1></h1> <hr>
+        
+        <div class="kid"  id="kid1">
+            <img src="./images/five.jpg" alt="" class="img">
+            First flex has to be twice the width !   1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab labore autem tenetur perferendis rem,
+            sapiente voluptatibus dignissimos similique neque officiis et unde soluta ipsum libero? Aperiam reiciendis magnam maiores,
+             optio, delectus possimus dolores animi sequi nihil minima temporibus recusandae minus architecto reprehenderit. Atque velit voluptatum, ipsam quas perferendis sint consectetur ipsa maxime aliquam, voluptatibus, quos possimus aut provident quisquam perspiciatis impedit et. Voluptatibus porro harum, quisquam ex ipsum sunt accusantium corporis voluptatem pariatur aut maxime dignissimos obcaecati quaerat assumenda odit ratione rem sapiente itaque ad inventore fuga aperiam molestiae! Enim iste suscipit recusandae blanditiis maiores exercitationem dolor, est ab amet minus voluptatum incidunt autem quibusdam? Velit reiciendis, illum ipsum et laudantium aliquam, tempore inventore saepe sunt impedit consequatur labore. Quas in sapiente officia iste facere repellendus obcaecati eligendi eum minima corrupti,
+            asperiores eos provident culpa repellat illo! Sunt, rerum modi. Enim quaerat neque hic cupiditate ipsa facere qui, cumque aspernatur totam. Ipsa officia architecto est molestiae placeat, atque magni saepe nulla, incidunt illo cupiditate in vel odio. Corporis quaerat dolorem incidunt praesentium aut deserunt porro, quos iste ab obcaecati a laborum necessitatibus similique doloremque vitae minus nisi illum omnis expedita consequatur? Explicabo odit ratione, quaerat aut dicta quam cum.
+       </div>
+        <div class="kid">
+            <img src="./images/six.jpg" alt="" class="img">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab labore autem tenetur perferendis rem,
+             sapiente voluptatibus dignissimos similique neque officiis et unde soluta ipsum libero? Aperiam reiciendis magnam maiores,
+              optio, delectus possimus dolores animi sequi nihil minima temporibus recusandae minus architecto reprehenderit. Atque velit voluptatum, ipsam quas perferendis sint consectetur ipsa maxime aliquam, voluptatibus, quos possimus aut provident quisquam perspiciatis impedit et. Voluptatibus porro harum, quisquam ex ipsum sunt accusantium corporis voluptatem pariatur aut maxime dignissimos obcaecati quaerat assumenda odit ratione rem sapiente itaque ad inventore fuga aperiam molestiae! Enim iste suscipit recusandae blanditiis maiores exercitationem dolor, est ab amet minus voluptatum incidunt autem quibusdam? Velit reiciendis, illum ipsum et laudantium aliquam, tempore inventore saepe sunt impedit consequatur labore. Quas in sapiente officia iste facere repellendus obcaecati eligendi eum minima corrupti,
+             asperiores eos provident culpa repellat illo! Sunt, rerum modi. Enim quaerat neque hic cupiditate ipsa facere qui, cumque aspernatur totam. Ipsa officia architecto est molestiae placeat, atque magni saepe nulla, incidunt illo cupiditate in vel odio. Corporis quaerat dolorem incidunt praesentium aut deserunt porro, quos iste ab obcaecati a laborum necessitatibus similique doloremque vitae minus nisi illum omnis expedita consequatur? Explicabo odit ratione, quaerat aut dicta quam cum.
+        </div>
+
+        <div class="kid">
+            <img src="./images/six.jpg" alt="" class="img">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab labore autem tenetur perferendis rem,
+            sapiente voluptatibus dignissimos similique neque officiis et unde soluta ipsum libero? Aperiam reiciendis magnam maiores,
+             optio, delectus possimus dolores animi sequi nihil minima temporibus recusandae minus architecto reprehenderit. Atque velit voluptatum, ipsam quas perferendis sint consectetur ipsa maxime aliquam, voluptatibus, quos possimus aut provident quisquam perspiciatis impedit et. Voluptatibus porro harum, quisquam ex ipsum sunt accusantium corporis voluptatem pariatur aut maxime dignissimos obcaecati quaerat assumenda odit ratione rem sapiente itaque ad inventore fuga aperiam molestiae! Enim iste suscipit recusandae blanditiis maiores exercitationem dolor, est ab amet minus voluptatum incidunt autem quibusdam? Velit reiciendis, illum ipsum et laudantium aliquam, tempore inventore saepe sunt impedit consequatur labore. Quas in sapiente officia iste facere repellendus obcaecati eligendi eum minima corrupti,
+            asperiores eos provident culpa repellat illo! Sunt, rerum modi. Enim quaerat neque hic cupiditate ipsa facere qui, cumque aspernatur totam. Ipsa officia architecto est molestiae placeat, atque magni saepe nulla, incidunt illo cupiditate in vel odio. Corporis quaerat dolorem incidunt praesentium aut deserunt porro, quos iste ab obcaecati a laborum necessitatibus similique doloremque vitae minus nisi illum omnis expedita consequatur? Explicabo odit ratione, quaerat aut dicta quam cum.
+       </div>
+
+       <!-- <div class="kid">
+        <img src="./images/five.jpg" alt="" class="img">   
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis ab labore autem tenetur perferendis rem,
+        sapiente voluptatibus dignissimos similique neque officiis et unde soluta ipsum libero? Aperiam reiciendis magnam maiores,
+         optio, delectus possimus dolores animi sequi nihil minima temporibus recusandae minus architecto reprehenderit. Atque velit voluptatum, ipsam quas perferendis sint consectetur ipsa maxime aliquam, voluptatibus, quos possimus aut provident quisquam perspiciatis impedit et. Voluptatibus porro harum, quisquam ex ipsum sunt accusantium corporis voluptatem pariatur aut maxime dignissimos obcaecati quaerat assumenda odit ratione rem sapiente itaque ad inventore fuga aperiam molestiae! Enim iste suscipit recusandae blanditiis maiores exercitationem dolor, est ab amet minus voluptatum incidunt autem quibusdam? Velit reiciendis, illum ipsum et laudantium aliquam, tempore inventore saepe sunt impedit consequatur labore. Quas in sapiente officia iste facere repellendus obcaecati eligendi eum minima corrupti,
+        asperiores eos provident culpa repellat illo! Sunt, rerum modi. Enim quaerat neque hic cupiditate ipsa facere qui, cumque aspernatur totam. Ipsa officia architecto est molestiae placeat, atque magni saepe nulla, incidunt illo cupiditate in vel odio. Corporis quaerat dolorem incidunt praesentium aut deserunt porro, quos iste ab obcaecati a laborum necessitatibus similique doloremque vitae minus nisi illum omnis expedita consequatur? Explicabo odit ratione, quaerat aut dicta quam cum.
+       </div> -->
+    </div>
+    
+</body>
+</html>
