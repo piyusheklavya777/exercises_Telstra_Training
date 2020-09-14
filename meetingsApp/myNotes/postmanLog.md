@@ -53,3 +53,21 @@ POST localhost:3000/api/login
 
 
 localhost:3000/api/meetings?email=dexter@telstra.com&date=TODAY&search_terms=NewIdea
+# new
+{
+    "attendees": [
+        "gregory@telstra.com",
+        "blake@telstra.com",
+        "chloe@telstra",
+        "emilia@telstra",
+        "fred@telstra.com",
+        "andy@telstra.com"
+    ],
+    "_id": "5f5fa109505de02a0e40ee3a",
+    "title": "Meeting Sep 29",
+    "MeetingDate": "Sun Sep 29 2020",
+    "startTime": "23:41:53 GMT+0530 (India Standard Time)",
+    "endTime": "24:41:53 GMT+0530 (India Standard Time)",
+    "description": "Discussion on new idea to implement !",
+    "__v": 0
+}

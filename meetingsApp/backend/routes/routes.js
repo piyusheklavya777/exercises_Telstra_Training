@@ -3,25 +3,13 @@ const router = express.Router();
 
 const mongoose = require( 'mongoose' );
 const jwt = require('jsonwebtoken');
+const { Router } = require('express');
 
 //importing the three data models below
 const User    = mongoose.model( 'User' );
 const Meeting = mongoose.model( 'Meeting' );
 const Team    = mongoose.model( 'Team' );
 
-//testing the jwt and database operations by dummy db (using a local json instead of db)
-let users = [
-    {
-        username: 'u1',
-        password: 'p1'
-    },{
-        username: 'u2',
-        password: 'p2'
-    },{
-        username: 'u3',
-        password: 'p3'
-    }
-]
 //-------------------------ROUTING-----------------
 
 // router.get('/', (req, res, next)=> {
@@ -39,9 +27,22 @@ let users = [
 
 //---------------------
 
+
+router.get('/users', (req,res,next)=> { //GET all users
+    User.find({}).exec((err,result)=> {
+        if(err) {
+        const err = new Error('ERROR fetching users'); 
+        err.status = 403
+        return next( err )
+        }
+        return res.status(200).json(result)
+    })
+})
+
+
 router.post('/login', (req, res, next) => {
     if(!req.body.email && !req.body.password) {
-        const err = new Error('USERNAME/PASSWORD/BOTH missing in /login POST request '); //ERROR object sends a HTML file 
+        const err = new Error('USERNAME/PASSWORD/BOTH missing in /login POST request ');
         err.status = 403
         return next( err )
     }
@@ -66,21 +67,16 @@ router.post('/login', (req, res, next) => {
                     token: token,
                     user : result[0]
                 })
-            } )
-            
-        })
-     //   if(!user) {  return res.status(403).json({message: 'Login failed! User credentials not matched.'})  }
+            } )            
+        })        
+     
+}) 
 
-        
 
-        //jwt        
-})  // router.post('/login',
-
-//////////////////////////////////////////////
 router.post('/signup', (req,res,next)=> {
     let user = req.body;
     if(!user) {
-        const err = new Error('USER details missing in /signup POST request '); //ERROR object sends a HTML file 
+        const err = new Error('USER details missing in /signup POST request ');
         err.status = 403
         return next( err )
     }
@@ -101,42 +97,45 @@ router.post('/signup', (req,res,next)=> {
         
     })
 })
-//////////////////////////////////////////////
-
-// router.post('/addteam', (req,res, next)=> {
-//     console.log('POST /addteam');
-//     const team = req.body;
-
-//     if(!team) {
-//         const err = new Error( 'Team should be included in request body' );
-//         err.status = 403;
-//         return next( err );
-//     }
-//     Team.create(team, (err, teamWithId) => {
-//         if(err) {
-//             err.status = 500;
-//             return next( err )
-//         }
-//         res.status( 200 ).json( teamWithId )
-//     } )
-
-// }) // teams feature later
-//////////////////////////////////////////////
 
 router.post('/meetings', (req, res, next) => {
-    if(!req.body.meeting.MeetingDate) {
-        const err = new Error('MEETING DETAILS missing in /login POST request '); //ERROR object sends a HTML file 
+    if(!req.body) {
+        let err = new Error('MEETING DETAILS missing in /login POST request ');
         err.status = 403
         return next( err )
     }
-    let meeting = req.body.meeting;
-    let creatorEmail = req.body.email;
-    meeting = {
-        ...meeting,
-        attendees : [...meeting.attendees, creatorEmail]
+    //adding the creator to list of attendees. Then checking for any duplicates
+    let creatorEmail = req.query.email;
+    let meeting = {
+        ...req.body,
+        attendees : [...req.body.attendees, creatorEmail]
     }
-    console.log(meeting); return res.status(500).json({message: "lol"})
-    Meeting.create(meeting, (err, meetingWithId)=> {
+    meeting = {
+        ...req.body,
+        attendees :  meeting.attendees.filter((value, index) => meeting.attendees.indexOf(value) === index)
+    }
+    // checking if all users  exist :: ASYNC AWAIT is needed
+//     let allusersexist=true;
+
+//    await meeting.attendees.forEach((user)=> {
+//         console.log('user',user)
+//          User.find({email: user}).exec((err,result)=> {
+//             console.log(result.length)
+//             if(err) {
+//                 err.status = 500;  return next( err )
+//             }
+//             console.log(err)
+//             if(!(result && result.length)) allusersexist = false;
+//         }) 
+//     })
+//     if(!allusersexist) {
+//         return res.status(400).json({message: 'user not found'}) 
+//     }
+
+//    console.log('creating.............!!!', allusersexist)
+
+
+   Meeting.create(meeting, (err, meetingWithId)=> {
         if(err) {
             console.log('error creating meeting, err :', err)
             err.status = 500;
@@ -144,10 +143,36 @@ router.post('/meetings', (req, res, next) => {
         }
         res.status(200).json(meetingWithId)
     })
-}) // router.post('/meetings',
+})
 
 
+router.post('/meetings/leaveme', (req, res, next)=> {
+    const email = req.body.email;
+    const id = req.body.meetingId;
 
+    Meeting.findOneAndUpdate({_id: id},{ $pull: {attendees: email} },{new:true},(err,doc,result)=> {
+        if(err) {
+            return res.status(500).json({message: "could not update meeting POST /meetings/leaveme"})
+        }
+        else {
+            console.log(doc);  return  res.status( 200 ).json( doc );
+        }
+    })
+})
+
+router.post('/meetings/adduser', (req, res, next)=> {
+    const email = req.body.email;
+    const id = req.body.meetingId;
+
+    Meeting.findOneAndUpdate({_id: id},{ $addToSet: {attendees: email} },{new:true},(err,doc,result)=> {
+        if(err) {
+            return res.status(500).json({message: "could not update meeting POST /meetings/adduser"})
+        }
+        else {
+            console.log(doc);  return  res.status( 200 ).json( doc );
+        }
+    })
+})
 
 router.get('/meetings', (req, res, next)=> {
 
