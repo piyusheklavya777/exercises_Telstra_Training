@@ -24,10 +24,6 @@ const meetingSchema = new mongoose.Schema({
     attendees: {
         type: [String],
         required: true
-    },
-    attendeesStrict: {
-        type: [String],
-        required: true        
     }
 });
 

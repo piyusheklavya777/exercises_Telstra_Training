@@ -13,16 +13,17 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    teams: {
-        type: [String],
-        required: true
-    },
-    meetings: {
-        type: [String],
-        required: true
-        
     }
+    // ,
+    // teams: {
+    //     type: [String],
+    //     required: true
+    // },
+    // meetings: {
+    //     type: [String],
+    //     required: true
+        
+    // }
 });
 
 mongoose.model('User', userSchema)
