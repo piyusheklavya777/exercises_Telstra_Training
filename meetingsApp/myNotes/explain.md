@@ -1,3 +1,7 @@
+# discussion 11AM 14 Sep
+- No need of meetings array in users. multi indexing
+
+
 # DB Design
 - Users are the fewest. There are generally too many more meetings than users, or than number of teams.
     So every query is tried to be initialted in users/teams collection. From there the meeting id is picked up.

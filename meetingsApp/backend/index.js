@@ -1,5 +1,5 @@
 //running init.js to establish db connection first
-//require('./init')
+require('./init')
 
 const mainRouter = require('./routes/routes')
 const express = require('express');
@@ -19,13 +19,13 @@ app.use((req, res, next)=> {
 app.use(express.urlencoded({ extended: false }))
 app.use( express.json() );
 
-app.use('/', mainRouter)
+app.use('/api', mainRouter)
 
 
 //-------------------------------------------------------------------------
 //final error handler
 app.use(( error, req, res) => {
-    res.status( error.status || 500 ).send( error );
+   res.status( error.status || 500 ).send( error );
 });
 //listening at the port env.PORT OR 3000
 app.set('port', process.env.PORT || 3000)

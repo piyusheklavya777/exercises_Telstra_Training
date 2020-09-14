@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 // create models as importable from instance
-require( './models/dataModels.js' );
+require('./models/userModel')
+require('./models/meetingModel')
+require('./models/teamModel')
 
 mongoose.connect( 'mongodb://localhost/database', { useNewUrlParser: true } );
 

@@ -3,7 +3,11 @@ const router = express.Router();
 
 const mongoose = require( 'mongoose' );
 const jwt = require('jsonwebtoken');
-//const Article = mongoose.model( 'Article' );
+
+//importing the three data models below
+const User    = mongoose.model( 'User' );
+const Meeting = mongoose.model( 'Meeting' );
+const Team    = mongoose.model( 'Team' );
 
 //testing the jwt and database operations by dummy db (using a local json instead of db)
 let users = [
@@ -48,11 +52,27 @@ router.post('/login', (req, res, next) => {
                 token: token,
                 username: username
             })
-        } )
+        } )        
+})  // router.post('/login',
 
-        
+router.post('/addteam', (req,res, next)=> {
+    console.log('POST /addteam');
+    const team = req.body;
+
+    if(!team) {
+        const err = new Error( 'Team should be included in request body' );
+        err.status = 403;
+        return next( err );
+    }
+    Team.create(team, (err, teamWithId) => {
+        if(err) {
+            err.status = 500;
+            return next( err )
+        }
+        res.status( 200 ).json( teamWithId )
+    } )
+
 })
-// router.post('/login',
 
 
 //--------------middleware tools------------------
